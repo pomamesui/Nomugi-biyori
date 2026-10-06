@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- 仮の画像です。本物の写真が届いたら、このファイルを差し替えてください -->
+  <rect width="400" height="400" fill="#efe6d3"/>
+  <ellipse cx="200" cy="300" rx="130" ry="14" fill="#4a3b2f" opacity="0.08"/>
+  <path d="M120 290 L120 190 Q200 135 280 190 L280 290 Z" fill="#edd58e"/><path d="M120 190 Q200 135 280 190" fill="none" stroke="#c9a052" stroke-width="10" stroke-linecap="round"/>
+</svg>

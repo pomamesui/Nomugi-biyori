@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" width="480" height="240">
+  <!-- 仮の画像です。手書きの看板の写真が届いたら、このファイルを差し替えてください -->
+  <rect x="10" y="10" width="460" height="220" rx="6" fill="#c9a77a"/>
+  <g stroke="#b08f62" stroke-width="2" opacity="0.6">
+    <line x1="10" y1="65" x2="470" y2="65"/><line x1="10" y1="120" x2="470" y2="120"/><line x1="10" y1="175" x2="470" y2="175"/>
+  </g>
+  <text x="240" y="140" text-anchor="middle" font-family="'Hiragino Mincho ProN','Yu Mincho',serif" font-size="56" fill="#4a3b2f" letter-spacing="6">こむぎ日和</text>
+</svg>

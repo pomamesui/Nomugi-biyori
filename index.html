@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- ↑「このファイルはHTML5で書かれています」という決まり文句 -->
+<html lang="ja">
+
+<!-- ========================================================
+     <head> … ページの設定（画面には表示されません）
+     ======================================================== -->
+<head>
+  <meta charset="UTF-8">
+
+  <!-- スマホの画面幅に合わせて表示するための設定（必須） -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ブラウザのタブに出るタイトル -->
+  <title>こむぎ日和｜毎日食べても飽きない、素朴なおやつ</title>
+
+  <!-- 検索結果などに出る説明文 -->
+  <meta name="description" content="国産小麦粉ときび砂糖で焼く、甘さひかえめの焼き菓子のお店「こむぎ日和」です。">
+  <meta name="robots" content="noindex">
+
+  <!-- Googleフォントの読み込み
+       ・Zen Old Mincho … 見出し用。落ち着いた明朝体
+       ・Zen Kaku Gothic New … 本文用。スマホの小さな文字でも読みやすいゴシック体
+       「かわいすぎない」ように、丸い書体は使っていません -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500&family=Zen+Old+Mincho:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ------------------------------------------------------
+       ヘッダー（お店の名前とメニュー）
+       ------------------------------------------------------ -->
+  <header class="header">
+    <a class="header-logo" href="#top">こむぎ日和</a>
+    <p class="header-note">＊このサイトは練習用に作った架空のお店です。</p>
+
+    <!-- メニュー。href="#○○" は、id="○○" の場所へ移動するリンク -->
+    <nav class="nav">
+      <a href="#about">お店のこと</a>
+      <a href="#menu">おやつ</a>
+      <a href="#access">場所</a>
+      <a href="#calendar">営業日</a>
+      <a href="#order">お取り置き</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ----------------------------------------------------
+         1. トップ（お店の名前、手書きの看板、紹介文）
+         ---------------------------------------------------- -->
+    <section id="top" class="hero">
+      <!-- 手書きの看板の写真（ロゴの代わり）。alt にお店の名前を入れています -->
+      <img class="hero-kanban" src="images/kanban.svg" alt="こむぎ日和" width="480" height="240">
+
+      <!-- お店の名前は看板の画像で見せているので、
+           <h1>（一番大事な見出し）にはキャッチコピーを入れています -->
+      <!-- class="sp-only" の <br> は、スマホのときだけ効く改行です。
+           スマホでは3行、広い画面では2行になります -->
+      <h1 class="hero-title">
+        毎日食べても<br class="sp-only">
+        飽きない、<br>
+        素朴なおやつ。
+      </h1>
+
+      <p class="hero-text">
+        国産の小麦粉ときび砂糖で焼く、<br>
+        甘さひかえめの焼き菓子のお店です。
+      </p>
+    </section>
+
+    <!-- ----------------------------------------------------
+         2. お店のこと（始めたきっかけ）
+         section-green は「背景を淡い緑にする」追加のクラス
+         ---------------------------------------------------- -->
+    <section id="about" class="section section-green">
+      <h2 class="section-title">お店のこと</h2>
+
+      <div class="narrow about">
+        <p>
+          国産の小麦粉ときび砂糖を使って、<br>
+          甘さはひかえめに。
+        </p>
+        <p>
+          小さなお子さんと一緒に<br>
+          食べてもらえたらいいな、という思いで<br>
+          お店を始めました。
+        </p>
+        <p>
+          毎日食べても飽きない、素朴なおやつを<br>
+          ひとつひとつ焼いています。
+        </p>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------
+         3. おやつ（商品の写真と値段）
+         ---------------------------------------------------- -->
+    <section id="menu" class="section">
+      <h2 class="section-title">おやつ</h2>
+
+      <p class="note note-allergy">※すべての商品に小麦・卵・乳を使っています。 </p>
+
+      <!-- 商品カードを並べる入れ物。スマホでは2列、パソコンでは3列になります -->
+      <div class="menu">
+
+        <!-- ▼ 商品1つ分。増やすときは <figure>〜</figure> をコピーします -->
+        <figure class="menu-item">
+          <img src="images/scone-plain.svg" alt="プレーンスコーン" width="400" height="400">
+          <figcaption>
+            <span class="menu-name">プレーンスコーン</span>
+            <span class="menu-price">280円</span>
+          </figcaption>
+        </figure>
+
+        <figure class="menu-item">
+          <img src="images/scone-tea.svg" alt="紅茶のスコーン" width="400" height="400">
+          <figcaption>
+            <span class="menu-name">紅茶のスコーン</span>
+            <span class="menu-price">320円</span>
+          </figcaption>
+        </figure>
+
+        <figure class="menu-item">
+          <img src="images/cookie-kibi.svg" alt="きび砂糖のクッキー" width="400" height="400">
+          <figcaption>
+            <span class="menu-name">きび砂糖のクッキー</span>
+            <!-- menu-note は「5枚入」などの補足用の小さな文字 -->
+            <span class="menu-note">5枚入</span>
+            <span class="menu-price">350円</span>
+          </figcaption>
+        </figure>
+
+        <figure class="menu-item">
+          <img src="images/cookie-zenryu.svg" alt="全粒粉のクッキー" width="400" height="400">
+          <figcaption>
+            <span class="menu-name">全粒粉のクッキー</span>
+            <span class="menu-note">5枚入</span>
+            <span class="menu-price">380円</span>
+          </figcaption>
+        </figure>
+
+        <figure class="menu-item">
+          <img src="images/pound-lemon.svg" alt="レモンのパウンドケーキ" width="400" height="400">
+          <figcaption>
+            <span class="menu-name">レモンのパウンドケーキ</span>
+            <span class="menu-note">1切れ</span>
+            <span class="menu-price">320円</span>
+          </figcaption>
+        </figure>
+
+        <figure class="menu-item">
+          <img src="images/pound-banana.svg" alt="バナナのパウンドケーキ" width="400" height="400">
+          <figcaption>
+            <span class="menu-name">バナナのパウンドケーキ</span>
+            <span class="menu-note">1切れ</span>
+            <span class="menu-price">320円</span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------
+         4. お店の場所
+         ---------------------------------------------------- -->
+    <section id="access" class="section section-green">
+      <h2 class="section-title">お店の場所</h2>
+
+      <!-- narrow は「中身の横幅を読みやすい幅におさえる」ための入れ物 -->
+      <div class="narrow">
+        <img class="access-photo" src="images/gaikan.svg" alt="こむぎ日和の外観" width="800" height="500">
+
+        <!-- <address> は住所や連絡先を表すタグ -->
+        <address class="access-address">
+          ひなた市こむぎ町2-5-8
+        </address>
+        <p class="access-walk">ひなた駅 北口から歩いて約7分</p>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------
+         5. 営業日
+         ---------------------------------------------------- -->
+    <section id="calendar" class="section">
+      <h2 class="section-title">営業日</h2>
+
+      <div class="narrow">
+        <p class="lead">
+          営業日は不定期です。<br>
+          下のカレンダーでご確認ください。
+        </p>
+
+        <!-- ▼▼ Googleカレンダーを入れる場所 ▼▼
+             今は「仮の枠」を置いています。
+             お客様のGoogleカレンダーができたら、
+             下の <div class="calendar-box">〜</div> をまるごと消して、
+             Googleカレンダーの「埋め込みコード」（<iframe ...> で始まる1行）に
+             置きかえます。 -->
+        
+        <iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=7774171be75f29fb383d20f1730bc639cd7024cd0ccb16872d60f96ef220d8a1%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        
+        <!-- ▲▲ ここまで ▲▲ -->
+
+        <!-- <dl> は「項目名と内容」のセットを並べるリスト。
+             <dt> が項目名、<dd> が内容です -->
+        <dl class="info">
+          <dt>営業時間</dt>
+          <dd>11時〜17時</dd>
+        </dl>
+        <p class="note">※ 売り切れたら早めに閉めます。</p>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------
+         6. お取り置き・Instagram
+         ---------------------------------------------------- -->
+    <section id="order" class="section section-green">
+      <h2 class="section-title">お取り置き</h2>
+
+      <div class="narrow">
+        <p class="lead">
+          お取り置きは、<br>
+          InstagramのDMで受け付けています。
+        </p>
+
+        <!-- Instagramへのリンク。
+             target="_blank" は「新しいタブで開く」、
+             rel="noopener" はそのときの安全のための決まり文句です -->
+        <a class="button" href="#" target="_blank" rel="noopener">
+          Instagramを見る
+        </a>
+        <p class="insta-id">@komugi_biyori</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ------------------------------------------------------
+       フッター（ページの一番下）
+       ------------------------------------------------------ -->
+  <footer class="footer">
+    <p class="footer-logo">こむぎ日和</p>
+    <p><small>&copy; 2026 こむぎ日和</small></p>
+  </footer>
+
+</body>
+</html>

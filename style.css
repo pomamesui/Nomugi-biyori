@@ -1,0 +1,416 @@
+/* ==========================================================
+   こむぎ日和 のスタイルシート
+
+   このファイルは「スマホ優先」で書いています。
+   ・上から順に書いてあるのは、すべてスマホ用の見た目
+   ・一番下の @media (min-width: 768px) の中だけが、
+     「画面が広いとき（タブレット・パソコン）」の追加の指定
+
+   Petit Éclat は逆で、パソコン用を先に書き、最後にスマホ用を
+   足していました（max-width）。スマホで見る人が多いサイトは、
+   こちらの書き方のほうが向いています。
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   0. 色と書体の登録（CSS変数）
+   ---------------------------------------------------------- */
+:root {
+  --kinari: #f9f5e1;        /* 生成り（基本の背景。やわらかい黄みのある白） */
+  --wakakusa: #e2e8d2;      /* 若草色（背景の切り替え用。淡い緑） */
+  --fukamidori: #5f6b4a;    /* 深緑（フッターの背景） */
+  --brown: #4a3b2f;         /* こげ茶（文字。真っ黒より柔らかい） */
+  --brown-light: #8a7868;   /* 薄めのこげ茶（補足の文字） */
+  --wood: #8a6a4a;          /* 木の色（線やボタン） */
+  --komugi: #c49a5a;        /* 小麦色（差し色） */
+
+  --font-title: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-body: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+
+/* ----------------------------------------------------------
+   1. 全体の基本設定
+   ---------------------------------------------------------- */
+* {
+  box-sizing: border-box;   /* 幅の計算に余白と枠線を含める（崩れにくくなる） */
+}
+
+html {
+  scroll-behavior: smooth;     /* メニューを押したとき、なめらかに移動する */
+  scroll-padding-top: 100px;   /* 移動先が、上に固定したヘッダーに隠れないようにする */
+}
+
+body {
+  margin: 0;
+  background-color: var(--kinari);
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 0.05em;
+}
+
+img {
+  max-width: 100%;   /* 画面からはみ出さない */
+  height: auto;
+  display: block;
+}
+
+h1, h2 {
+  font-family: var(--font-title);
+  font-weight: 500;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+
+/* ----------------------------------------------------------
+   2. ヘッダー
+   ---------------------------------------------------------- */
+.header {
+  position: sticky;   /* スクロールしても上に貼りつく */
+  top: 0;
+  z-index: 10;
+  padding: 10px 16px 8px;
+  text-align: center;
+  background-color: var(--fukamidori);
+}
+
+.header-logo {
+  font-family: var(--font-title);
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  color: var(--kinari);
+  text-decoration: none;
+}
+
+.header-note{
+  text-align: center;
+  font-size: 12px;
+  color: #f9f5e1;
+}
+
+.nav {
+  display: flex;              /* メニューを横に並べる */
+  justify-content: center;    /* 中央に寄せる */
+  flex-wrap: wrap;            /* 入りきらないときは折り返す */
+  gap: 0 14px;
+}
+
+.nav a {
+  font-size: 13px;
+  color: var(--kinari);
+  text-decoration: none;
+  padding: 6px 0;   /* 上下に余白をつけて、指で押しやすくする */
+}
+
+
+/* ----------------------------------------------------------
+   3. トップ
+   ---------------------------------------------------------- */
+.hero {
+  padding: 56px 20px 72px;
+  text-align: center;
+}
+
+.hero-kanban {
+  width: 240px;
+  margin: 0 auto 40px;   /* 左右 auto で中央寄せ */
+  border-radius: 4px;
+}
+
+.hero-title {
+  font-size: 24px;
+  line-height: 1.8;
+  letter-spacing: 0.12em;
+}
+
+/* sp-only は「スマホのときだけ改行する」ための <br> 用クラス。
+   画面が広いときは、一番下の @media の中で消しています */
+.sp-only {
+  display: inline;
+}
+
+.hero-text {
+  margin-top: 24px;
+  color: var(--brown-light);
+}
+
+
+/* ----------------------------------------------------------
+   4. 各セクション共通
+   ---------------------------------------------------------- */
+.section {
+  padding: 64px 20px;
+}
+
+/* 背景を淡い緑にする追加クラス */
+.section-green {
+  background-color: var(--wakakusa);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 21px;
+  letter-spacing: 0.2em;
+  margin-bottom: 40px;
+}
+
+/* 見出しの下に、小麦色の短い線を引く。
+   ::after は「この要素のうしろに飾りを足す」という書き方です */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  margin: 14px auto 0;
+  background-color: var(--komugi);
+}
+
+/* 中身の横幅を、読みやすい幅におさえる入れ物 */
+.narrow {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lead {
+  margin-bottom: 28px;
+}
+
+.note {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--brown-light);
+}
+
+
+/* ----------------------------------------------------------
+   5. おやつ（商品）
+   ---------------------------------------------------------- */
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* スマホでは2列（同じ幅で2つ） */
+  gap: 32px 16px;                   /* すき間（縦 横） */
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.note-allergy{
+  text-align:center;
+  margin-bottom: 24px;
+}
+
+.menu-item {
+  margin: 0;
+  text-align: center;
+}
+
+.menu-item img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* span は本来横に並ぶので、block にして縦に並べる */
+.menu-item figcaption span {
+  display: block;
+}
+
+.menu-name {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.menu-note {
+  font-size: 12px;
+  color: var(--brown-light);
+  line-height: 1.6;
+}
+
+.menu-price {
+  font-size: 16px;
+  color: var(--wood);
+}
+
+
+/* ----------------------------------------------------------
+   6. お店の場所
+   ---------------------------------------------------------- */
+.access-photo {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.access-address {
+  font-style: normal;   /* <address> は初めから斜めの文字になるので、元に戻す */
+  font-size: 16px;
+}
+
+.access-walk {
+  font-size: 14px;
+  color: var(--brown-light);
+}
+
+
+/* ----------------------------------------------------------
+   7. 営業日
+   ---------------------------------------------------------- */
+
+.calendar {
+  width: 100%;
+  height: 420px;
+  margin-bottom: 28px;
+}
+
+/* 「営業時間　11時〜17時」を横に並べる */
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.info dt {
+  color: var(--wood);
+}
+
+.info dd {
+  margin: 0;
+}
+
+
+/* ----------------------------------------------------------
+   8. お取り置き・Instagram
+   ---------------------------------------------------------- */
+.button {
+  display: inline-block;
+  padding: 12px 36px;
+  background-color: var(--wood);
+  color: var(--kinari);
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s;   /* 色の変化をふんわりさせる */
+}
+
+/* マウスを乗せたとき（パソコン向け） */
+.button:hover {
+  background-color: var(--brown);
+}
+
+.insta-id {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--brown-light);
+}
+
+
+/* ----------------------------------------------------------
+   9. お店のこと
+   ---------------------------------------------------------- */
+.about p {
+  margin-bottom: 20px;
+}
+
+
+/* ----------------------------------------------------------
+   10. フッター
+   ---------------------------------------------------------- */
+.footer {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--fukamidori);
+  color: var(--kinari);
+}
+
+.footer-logo {
+  font-family: var(--font-title);
+  font-size: 17px;
+  letter-spacing: 0.2em;
+}
+
+
+/* ----------------------------------------------------------
+   11. 画面が広いとき（タブレット・パソコン）の追加指定
+   @media (min-width: 768px) { … } の中は、
+   「画面の幅が768px以上のとき」だけ効きます。
+   スマホ用の指定に「上書き」する形なので、変えたいところだけ書けばOKです。
+   ---------------------------------------------------------- */
+@media (min-width: 768px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  /* ヘッダー：お店の名前を左、メニューを右に並べる */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 32px;
+  }
+
+  .header-logo {
+    font-size: 20px;
+  }
+
+  .nav {
+    gap: 0 28px;
+  }
+
+  .nav a {
+    font-size: 14px;
+  }
+
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  .hero {
+    padding: 96px 20px 112px;
+  }
+
+  .hero-kanban {
+    width: 320px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  /* スマホ用の改行を消す（広い画面では2行で表示する） */
+  .sp-only {
+    display: none;
+  }
+
+  .section {
+    padding: 96px 32px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 56px;
+  }
+
+  /* 商品：2列から3列に */
+  .menu {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 48px 32px;
+  }
+
+  .menu-name {
+    font-size: 16px;
+  }
+
+  .menu-price {
+    font-size: 18px;
+  }
+}

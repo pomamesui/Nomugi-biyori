@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- 仮の画像です。お店の外観の写真が届いたら、このファイルを差し替えてください -->
+  <rect width="800" height="500" fill="#e6dcc6"/>
+  <rect x="0" y="420" width="800" height="80" fill="#d5c8ac"/>
+  <rect x="220" y="170" width="360" height="250" fill="#f6f0e3"/>
+  <path d="M195 170 L400 70 L605 170 Z" fill="#8a6a4a"/>
+  <rect x="270" y="290" width="80" height="130" fill="#8a6a4a"/>
+  <rect x="400" y="260" width="130" height="90" fill="#cfe0dc"/>
+  <rect x="400" y="235" width="130" height="25" fill="#c49a5a"/>
+  <rect x="330" y="200" width="140" height="30" rx="3" fill="#c9a77a"/>
+</svg>
